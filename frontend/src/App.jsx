@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useState, useEffect} from 'react'
 import './App.css'
 
 function App() {
@@ -15,13 +12,13 @@ function App() {
     return () => clearInterval(intervalo);
   }, []);
 
-  const horaformtated = hora.toLocaleTimeString('pt-PT', {
+  const horaformatada = hora.toLocaleTimeString('pt-PT', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
   });
 
-  const formatedDate = hora.toLocaleDateString('pt-PT', {
+  const dataFormatada = hora.toLocaleDateString('pt-PT', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
@@ -31,12 +28,11 @@ function App() {
   return(
     <div className='container'>
       <div className="watch-card">
-        <h1 className="time">{horaformtated}</h1>
-        <p className="date">{formatedDate}</p>
+        <h1 className="hora">{horaformatada}</h1>
+        <p className="data">{dataFormatada}</p>
       </div>
     </div>
-  )
-
+  );
 }
 
 export default App
