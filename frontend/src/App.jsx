@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react'
 import './App.css'
 
 function App() {
-  const [Hora, setHora] = useState(new Date());
+  const [hora, setHora] = useState(new Date());
 
   useEffect(() => {
     const intervalo = setInterval(() => {
